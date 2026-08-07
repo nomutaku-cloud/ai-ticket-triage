@@ -1,0 +1,37 @@
+[
+  {
+    "serviceName": "payment-service",
+    "status": "DEGRADED",
+    "message": "外部決済ゲートウェイへのレイテンシが増加しています",
+    "lastChecked": "2026-08-05T20:00:00+09:00",
+    "ownerTeam": "Payment Team"
+  },
+  {
+    "serviceName": "order-service",
+    "status": "RUNNING",
+    "message": "正常稼働中",
+    "lastChecked": "2026-08-05T20:00:00+09:00",
+    "ownerTeam": "Order Team"
+  },
+  {
+    "serviceName": "auth-service",
+    "status": "RUNNING",
+    "message": "正常稼働中",
+    "lastChecked": "2026-08-05T20:00:00+09:00",
+    "ownerTeam": "Auth Team"
+  },
+  {
+    "serviceName": "inventory-service",
+    "status": "DOWN",
+    "message": "サービスが停止中です。復旧作業を実施しています",
+    "lastChecked": "2026-08-05T20:00:00+09:00",
+    "ownerTeam": "Inventory Team"
+  },
+  {
+    "serviceName": "notification-service",
+    "status": "DEGRADED",
+    "message": "メール送信キューが滞留しています",
+    "lastChecked": "2026-08-05T20:00:00+09:00",
+    "ownerTeam": "Notification Team"
+  }
+]

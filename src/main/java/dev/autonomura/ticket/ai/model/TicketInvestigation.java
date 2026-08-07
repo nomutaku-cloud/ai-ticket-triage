@@ -1,9 +1,10 @@
-package dev.autonomura.ticket;
+package dev.autonomura.ticket.ai.model;
 
-public record TicketAnalysis(
+public record TicketInvestigation(
         String summary,
         String category,
         String priority,
+        String investigationResult,
         String recommendedAction,
         String assignedTeam) {
 }

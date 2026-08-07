@@ -1,0 +1,32 @@
+[
+  {
+    "teamName": "Payment Team",
+    "email": "payment-team@example.com",
+    "slackChannel": "#payment-support",
+    "onCallPhone": "+81-3-0000-0001"
+  },
+  {
+    "teamName": "Order Team",
+    "email": "order-team@example.com",
+    "slackChannel": "#order-support",
+    "onCallPhone": "+81-3-0000-0002"
+  },
+  {
+    "teamName": "Auth Team",
+    "email": "auth-team@example.com",
+    "slackChannel": "#auth-support",
+    "onCallPhone": "+81-3-0000-0003"
+  },
+  {
+    "teamName": "Inventory Team",
+    "email": "inventory-team@example.com",
+    "slackChannel": "#inventory-support",
+    "onCallPhone": "+81-3-0000-0004"
+  },
+  {
+    "teamName": "Notification Team",
+    "email": "notification-team@example.com",
+    "slackChannel": "#notification-support",
+    "onCallPhone": "+81-3-0000-0005"
+  }
+]

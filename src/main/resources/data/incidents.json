@@ -1,0 +1,92 @@
+[
+  {
+    "id": "INC-001",
+    "serviceName": "payment-service",
+    "title": "payment-service 接続タイムアウト",
+    "description": "決済処理でタイムアウトが多発し、注文完了ができない状態が続いた",
+    "errorMessage": "Connection timeout: payment-service after 30000ms",
+    "resolution": "payment-service の接続プールの上限を拡張し、スロットリング設定を緩和",
+    "team": "Payment Team"
+  },
+  {
+    "id": "INC-002",
+    "serviceName": "payment-service",
+    "title": "payment-service 504 ゲートウェイタイムアウト",
+    "description": "外部決済ゲートウェイへのリクエストが 504 エラーで失敗した",
+    "errorMessage": "504 Gateway Timeout from external payment gateway",
+    "resolution": "外部ゲートウェイの障害が原因。回復を待ちつつフォールバック処理を有効化",
+    "team": "Payment Team"
+  },
+  {
+    "id": "INC-003",
+    "serviceName": "payment-service",
+    "title": "payment-service DB 接続エラー",
+    "description": "決済サービスがデータベースに接続できず、トランザクションが失敗した",
+    "errorMessage": "Unable to acquire JDBC Connection: payment-db",
+    "resolution": "DB 接続プール枯渇。最大接続数を増加し、アイドル接続のタイムアウト設定を調整",
+    "team": "Payment Team"
+  },
+  {
+    "id": "INC-004",
+    "serviceName": "order-service",
+    "title": "order-service NullPointerException",
+    "description": "注文作成時に NullPointerException が発生し、一部注文が失敗した",
+    "errorMessage": "NullPointerException at OrderService.createOrder:142",
+    "resolution": "注文データの必須フィールドのバリデーション不足。修正デプロイで解消",
+    "team": "Order Team"
+  },
+  {
+    "id": "INC-005",
+    "serviceName": "order-service",
+    "title": "order-service 在庫サービス連携タイムアウト",
+    "description": "注文確定時に在庫サービスへの問い合わせがタイムアウトし、注文が保留状態になった",
+    "errorMessage": "Timeout calling inventory-service from order-service after 5000ms",
+    "resolution": "inventory-service の応答遅延が原因。サーキットブレーカーを有効化し影響を局所化",
+    "team": "Order Team"
+  },
+  {
+    "id": "INC-006",
+    "serviceName": "auth-service",
+    "title": "auth-service トークン検証失敗",
+    "description": "JWT トークンの検証が失敗し、認証済みユーザーがログアウトされる事象が発生した",
+    "errorMessage": "JWT signature verification failed: invalid key",
+    "resolution": "署名鍵のローテーション後に古いトークンが無効化された。鍵の移行手順を修正",
+    "team": "Auth Team"
+  },
+  {
+    "id": "INC-007",
+    "serviceName": "auth-service",
+    "title": "auth-service ログイン応答遅延",
+    "description": "ログイン API の応答時間が通常の 10 倍以上に増大し、ユーザーからログインできないとの報告",
+    "errorMessage": "auth-service response time 8500ms (threshold: 1000ms)",
+    "resolution": "auth-service 内のセッション DB クエリが遅延。インデックスを追加して解消",
+    "team": "Auth Team"
+  },
+  {
+    "id": "INC-008",
+    "serviceName": "inventory-service",
+    "title": "inventory-service データ不整合",
+    "description": "在庫数がマイナスになるデータ不整合が発生し、購入できない商品が表示された",
+    "errorMessage": "Inventory count negative: item-id=SKU-9982",
+    "resolution": "同時更新による競合状態が原因。楽観的ロックを実装して解消",
+    "team": "Inventory Team"
+  },
+  {
+    "id": "INC-009",
+    "serviceName": "inventory-service",
+    "title": "inventory-service レスポンス遅延",
+    "description": "在庫一覧取得 API の応答が著しく遅くなり、商品ページの表示が遅延した",
+    "errorMessage": "Slow query detected: inventory fetch took 12000ms",
+    "resolution": "全件スキャンが発生するクエリを修正。複合インデックスを追加",
+    "team": "Inventory Team"
+  },
+  {
+    "id": "INC-010",
+    "serviceName": "notification-service",
+    "title": "notification-service メール送信失敗",
+    "description": "注文完了メールが送信されず、ユーザーへの通知が止まった",
+    "errorMessage": "SMTP connection refused: mail.example.com:587",
+    "resolution": "外部 SMTP サーバーのポートブロックが原因。メールリレー設定を変更",
+    "team": "Notification Team"
+  }
+]

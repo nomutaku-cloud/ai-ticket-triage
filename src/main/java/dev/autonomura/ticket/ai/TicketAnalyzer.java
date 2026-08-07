@@ -1,5 +1,6 @@
-package dev.autonomura.ticket;
+package dev.autonomura.ticket.ai;
 
+import dev.autonomura.ticket.ai.model.TicketAnalysis;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
