@@ -1,8 +1,8 @@
-package dev.autonomura.ticket.infrastructure.monitoring;
+package dev.autonomura.support.mcp.infrastructure.monitoring;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.autonomura.ticket.domain.ServiceStatus;
+import dev.autonomura.support.mcp.domain.ServiceStatus;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 

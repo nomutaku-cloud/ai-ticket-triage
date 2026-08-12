@@ -1,6 +1,6 @@
-package dev.autonomura.ticket.infrastructure.incident;
+package dev.autonomura.support.mcp.infrastructure.incident;
 
-import dev.autonomura.ticket.domain.IncidentRecord;
+import dev.autonomura.support.mcp.domain.IncidentRecord;
 
 import java.util.List;
 

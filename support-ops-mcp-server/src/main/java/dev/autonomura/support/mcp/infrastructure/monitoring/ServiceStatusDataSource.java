@@ -1,6 +1,6 @@
-package dev.autonomura.ticket.infrastructure.monitoring;
+package dev.autonomura.support.mcp.infrastructure.monitoring;
 
-import dev.autonomura.ticket.domain.ServiceStatus;
+import dev.autonomura.support.mcp.domain.ServiceStatus;
 
 import java.util.Optional;
 

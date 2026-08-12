@@ -1,8 +1,8 @@
-package dev.autonomura.ticket.infrastructure.support;
+package dev.autonomura.support.mcp.infrastructure.support;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.autonomura.ticket.domain.SupportTeam;
+import dev.autonomura.support.mcp.domain.SupportTeam;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 
@@ -38,6 +38,13 @@ public class JsonSupportTeamDataSource implements SupportTeamDataSource {
     public Optional<SupportTeam> findByTeamName(String teamName) {
         return cache.stream()
                 .filter(t -> t.teamName().equalsIgnoreCase(teamName))
+                .findFirst();
+    }
+
+    @Override
+    public Optional<SupportTeam> findByServiceName(String serviceName) {
+        return cache.stream()
+                .filter(t -> t.serviceName() != null && t.serviceName().equalsIgnoreCase(serviceName))
                 .findFirst();
     }
 }

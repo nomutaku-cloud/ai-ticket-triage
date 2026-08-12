@@ -48,3 +48,5 @@ nb-configuration.xml
 article-01-ai-service.md
 article-02-tool-calling.md
 design-02-tool-calling.md
+design-03-mcp-server.md
+article-03-mcp.md

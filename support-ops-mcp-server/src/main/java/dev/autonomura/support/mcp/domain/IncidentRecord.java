@@ -1,4 +1,4 @@
-package dev.autonomura.ticket.domain;
+package dev.autonomura.support.mcp.domain;
 
 public record IncidentRecord(
         String id,

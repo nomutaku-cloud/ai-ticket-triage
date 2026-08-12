@@ -1,8 +1,8 @@
-package dev.autonomura.ticket.infrastructure.incident;
+package dev.autonomura.support.mcp.infrastructure.incident;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.autonomura.ticket.domain.IncidentRecord;
+import dev.autonomura.support.mcp.domain.IncidentRecord;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 
